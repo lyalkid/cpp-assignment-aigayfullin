@@ -19,14 +19,17 @@ int hw01(int start, int end)
 
     int sum = 0;
 
+
     for(int i = start; i < end + 1; i++){
-        if(is_prime(i)){
-            sum += i;
+        bool tmp = is_prime(i);
+        if(tmp){
+            int digit = i;
+            while(digit != 0){
+                sum += digit % 10;
+                digit /= 10;
+            }
         }
     }   
 
     return sum;
 }
-
-
-
