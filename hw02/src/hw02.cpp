@@ -1,32 +1,40 @@
-
 #include <hw02.h>
 //#include <iostream>
 
 
-bool poisk(std::string str, char target){
+int poisk(std::string str, char target){
+    int counter = 0;
     for(int i = 0; i < str.size(); i++){
-        if(str[i] == target){
-            return true;
+        if (str[i] == target ){
+            counter++;
+        }
+        if(counter == 2){
+            return i;
         }
     }
-    return false;
+    return -1;
 } 
+
+
 
 std::string hw02(std::string input_str)
 {
-    std::string str = "";
+
     for(int i = 0; i < input_str.size(); i++){
-        bool check = poisk(str, input_str[i]);
-        if(!check){
-            str += input_str[i];
+        char target = input_str[i];
+        int check = poisk(input_str, target);
+        if(check != -1){
+            for(int j = check; j < input_str.size()-1; j++){
+                char tmp = input_str[j];
+                input_str[j] = input_str[j+1];
+                input_str[j+1] = tmp;
+            }
+            int last_index = input_str.size() - 1; 
+            input_str.erase(last_index);
         }
     }
-    return str;
+     return input_str;
 }
 
 
 
-// int main(){
-//     std::string j = hw02("hello");
-//     std::cout << j << std::endl;
-// }
