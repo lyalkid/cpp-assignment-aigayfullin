@@ -1,0 +1,3 @@
+valgrind:
+sudo apt install valgrind
+valgrind --leak-check=full ./<YOUR_APP>
