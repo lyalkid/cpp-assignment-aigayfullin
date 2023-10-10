@@ -1,40 +1,59 @@
 #include <hw03.h>
 
 #include <cstring>
+#include <iostream>
 
-// void hw03(char* str, const char* pattern) {
-//     if (!str || !pattern || !*pattern) { // проверяем входные данные
-//         return;
-//     }
+bool areCorrectStrs(char* str, const char* pattern);
 
-//     const size_t str_len = std::strlen(str);
-//     const size_t pattern_len = std::strlen(pattern);
+void hw03(char* str, const char* pattern)
+{
+    if(areCorrectStrs(str, pattern)){
+        int strLen = std::strlen(str);
+        int patternLen = std::strlen(pattern);
 
-//     if (pattern_len > str_len) { // если pattern длиннее str, то в str его точно нет
-//         return;
-//     }
+        int c, i;
+        c = i = 0;
 
-//     char* p = std::strstr(str, pattern); // ищем первое вхождение pattern в str
+        //std::cout << strLen << ' ' << patternLen << '\n';
 
-//     if (!p) { // если pattern не найден, то возвращаем str без изменений
-//         return;
-//     }
+        while(i < strLen)
+        {
+            //std::cout << str << ' ' << pattern <<"\n";
 
-//     std::memmove(p, p + pattern_len, str_len - pattern_len + 1); // удаляем pattern из str
-// }
+            if(*(str + i) == *(pattern + c))
+            {
+                if(c == patternLen - 1)
+                {
+                    if(i != strLen - 1)
+                    {
+                        std::memmove(str + i - c, str + i + 1, strLen - i - 1);
+                    }
+                    else
+                    {
+                        std::memmove(str + i - c, str + i, strLen - i);
+                    }
+                    *(str + strLen - patternLen) = 0;
 
-
-void hw03(char* str, const char* pattern) {
-    if (str == nullptr || pattern == nullptr) { // проверка на нулевые указатели
-        return;
+                    //std::cout << str << '\n';
+                    
+                    break;
+                }
+                else
+                {
+                    c++;
+                }
+            }
+            else
+            {
+                if(c != 0) i--;
+                c = 0;
+            }
+            i++;
+        }
     }
-    size_t str_len = std::strlen(str);
-    size_t pattern_len = std::strlen(pattern);
-    if (str_len < pattern_len) { // если str короче pattern, то возвращаем str
-        return;
-    }
-    char* ptr = std::strstr(str, pattern); // ищем первое вхождение pattern в str
-    if (ptr != nullptr) { // если нашли
-        std::memmove(ptr, ptr + pattern_len, str_len - pattern_len + 1); // сдвигаем оставшуюся часть строки влево
-    }
+}
+
+bool areCorrectStrs(char* str, const char* pattern)
+{
+    return std::strlen(str) != 0 && std::strlen(pattern) != 0;
 }
