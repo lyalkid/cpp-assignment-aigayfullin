@@ -1,4 +1,4 @@
-//#include <iostream>
+//#include <hw05.h>
 #include <vector>
 #include <string> 
 using VecOfStr = std::vector<std::string>;
@@ -35,41 +35,3 @@ VecOfStr hw05(const VecOfStr& strings) {
     }
     return result;
 }
-// int main() {
-//     VecOfStr input = {"madam", "radar", "anagram", "rotor"};
-//     VecOfStr output = hw05(input);
-//     for (const auto& str : output) {
-//         std::cout << str << " ";
-//     }
-//     std::cout << std::endl;
-
-//     input = {"Madam, in Eden, I'm Adam"};
-//     output = hw05(input);
-//     for (const auto& str : output) {
-//         std::cout << str << " ";
-//     }
-//     std::cout << std::endl;
-
-//     input = {"A man, a plan, a canal, Panama!", "SIMPLETEXT"};
-//     output = hw05(input);
-//     for (const auto& str : output) {
-//         std::cout << str << " ";
-//     }
-//     std::cout << std::endl;
-
-//     input = {"Won't lovers revolt now?"};
-//     output = hw05(input);
-//     for (const auto& str : output) {
-//         std::cout << str << " ";
-//     }
-//     std::cout << std::endl;
-
-//     input = {"Red roses run no risk, sir, on Nurse's order"};
-//     output = hw05(input);
-//     for (const auto& str : output) {
-//         std::cout << str << " ";
-//     }
-//     std::cout << std::endl;
-
-//     return 0;
-// }

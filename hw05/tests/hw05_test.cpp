@@ -41,6 +41,41 @@ TEST(Hw05Tests, Test5)
     EXPECT_EQ(actual, expected);
 }
 
+TEST(Hw05Tests, Test6){
+    VecOfStr input{"Sit on a potato pan, Otis.", "SIMPLETEXT"};
+    auto expected = VecOfStr{"Sit on a potato pan, Otis."};
+    auto actual = hw05(input);
+    EXPECT_EQ(actual, expected);
+}
+
+TEST(Hw05Tests, Test7){
+    VecOfStr input{"Cigar? Toss it in a can. It is so tragic."};
+    auto expected = VecOfStr{"Cigar? Toss it in a can. It is so tragic."};
+    auto actual = hw05(input);
+    EXPECT_EQ(actual, expected);
+}
+
+TEST(Hw05Tests, Test8){
+    VecOfStr input{"Go hang a salami, I'm a lasagna hog."};
+    auto expected = VecOfStr{"Go hang a salami, I'm a lasagna hog."};
+    auto actual = hw05(input);
+    EXPECT_EQ(actual, expected);
+}
+
+TEST(Hw05Tests, Test9){
+    VecOfStr input{"Go deliver a dare vile dog.", "crow"};
+    auto expected = VecOfStr{"Go deliver a dare vile dog."};
+    auto actual = hw05(input);
+    EXPECT_EQ(actual, expected);
+}
+
+TEST(Hw05Tests, Test10){
+    VecOfStr input{"Murder for a jar of red rum.", "Oozy rat in a sanitary zoo."};
+    auto expected = VecOfStr{"Murder for a jar of red rum.", "Oozy rat in a sanitary zoo."};
+    auto actual = hw05(input);
+    EXPECT_EQ(actual, expected);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
