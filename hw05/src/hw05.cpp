@@ -1,8 +1,4 @@
-//#include <hw05.h>
-#include <vector>
-#include <string> 
-using VecOfStr = std::vector<std::string>;
-
+#include <hw05.h>
 
 VecOfStr hw05(const VecOfStr& strings) {
     auto process_string = [](const std::string& str) -> std::string {
