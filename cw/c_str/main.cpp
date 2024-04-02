@@ -25,22 +25,22 @@ void reverse(char *str);
 
 int main() {
 
-  // const char *str = "Hello, World!";
-  // int len = length(str);
-  // std::cout << "Length of the string: " << len << std::endl;
+  const char *str = "Hello, World!";
+  int len = length(str);
+  std::cout << "Length of the string: " << len << std::endl;
 
-  // const char *src = "Hello";
-  // char dest[20];
+  const char *src = "Hello";
+  char dest[20];
 
-  // // Копирование строки
-  // char *destPtr = copy(src, dest);
-  // std::cout << "Copied string: " << destPtr << std::endl;
+  // Копирование строки
+  char *destPtr = copy(src, dest);
+  std::cout << "Copied string: " << destPtr << std::endl;
 
-  // // Объединение строк
-  // const char *str1 = "Hello";
-  // const char *str2 = "World!";
-  // char *result = concatenate(str1, str2);
-  // std::cout << "Concatenated string: " << result << std::endl;
+  // Объединение строк
+  const char *str1 = "Hello";
+  const char *str2 = "World!";
+  char *result = concatenate(str1, str2);
+  std::cout << "Concatenated string: " << result << std::endl;
 
   // Разворот строки
   char rever[] = "String";
