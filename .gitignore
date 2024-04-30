@@ -1,5 +1,6 @@
 .idea
-build/*
+build/
 external/googletest/*
-.vscode/*
-Testing/*
+.vscode/
+Testing/
+.github
